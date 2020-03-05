@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button  class="button user-info__button user-info__button_edit">Edit</button>
+        </div>
+        <button class="button user-info__button user-info__button_add">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+    </div>
+
+  </div>
+  <template id="new-card-popup-template">
+    <div class="popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="new-form">
+          <input type="text" name="name" class="popup__input popup__input_type_name js-popup-input" placeholder="Имя картинки"  minlength="2">
+          <span data-for-element="name" class="popup__error-message popup__error-message_name visually-hidden">Поле name не валидно</span>
+          <input type="text" name="link" class="popup__input popup__input_type_link-url js-popup-input" placeholder="Ссылка на картинку">
+          <span data-for-element="link" class="popup__error-message popup__error-message_link visually-hidden ">Поле url не валидно</span>
+          <button type="submit" class="button popup__button">+</button>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="avatar-popup-template">
+    <div class="popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <h3 class="popup__title">Установить аватар</h3>
+        <form class="popup__form" name="avatar-form">
+          <input type="text" name="avatar" class="popup__input popup__input_type_name js-popup-input" placeholder="Ссылка на аватар"  minlength="2">
+          <span data-for-element="avatar" class="popup__error-message popup__error-message_name visually-hidden">Поле avatar не валидно</span>
+          <button type="submit" class="button popup__button">+</button>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="user-info-popup-template">
+    <div class="popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="info-form">
+          <input type="text" name="name" class="popup__input popup__input_type_name js-popup-input" placeholder="Имя" minlength="2">
+          <span data-for-element="name" class="popup__error-message popup__error-message_name visually-hidden">Поле name не валидно</span>
+          <input type="text" name="about" class="popup__input popup__input_type_about js-popup-input" placeholder="О себе">
+          <span data-for-element="about" class="popup__error-message popup__error-message_about visually-hidden">Поле about не валидно</span>
+          <button type="submit" class="button popup__button">+</button>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="picture-popup-template">
+    <div class="popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+      </div>
+    </div>
+  </template>
+  <template id="place-card-template">
+    <div class="place-card">
+      <div class="place-card__image">
+        <button class="place-card__delete-icon"></button>
+      </div>
+      <div class="place-card__description">
+        <h3 class="place-card__name">Камчатка</h3>
+        <span class="place-card__like-count">0</span><button class="place-card__like-icon"></button>
+      </div>
+    </div>
+  </template>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>
