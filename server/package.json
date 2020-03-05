@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "simple API for Yandex.Practicum ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiltk53/yandex-task.git"
+  },
+  "author": "Ramil Kerimov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramiltk53/yandex-task/issues"
+  },
+  "homepage": "https://github.com/ramiltk53/yandex-task#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
